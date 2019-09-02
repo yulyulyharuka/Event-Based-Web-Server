@@ -9,11 +9,14 @@ def on_http_request(server, error):
     server.accept(client)
     clients.append(client)
 
+    # open file
     fd = pyuv.fs.open(server.loop, path, os.O_RDONLY, stat.S_IFREG)
 
+    # read and close file
     length = 1000
     offset = 0
     read_data = pyuv.fs.read(server.loop, fd, length, offset)
+    close_status = pyuv.fs.close(server.loop, fd)
 
     data = read_data.decode('utf-8')
 
