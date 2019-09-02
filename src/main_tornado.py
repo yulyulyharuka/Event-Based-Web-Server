@@ -1,22 +1,37 @@
-import os,sys
+import os
+import sys
 import tornado.ioloop
 import tornado.web
 import tornado.httpserver
 
+path = None
+
+
 class SendFile(tornado.web.RequestHandler):
-  def get(self):
-    File = open("../testfile/test.txt","r")
-    self.write(File.read())
-    File.close()
+    def get(self):
+        global path
+        File = open(path, "r")
+        self.write(File.read())
+        File.close()
 
-  def post(self):
-    File = open("server.txt","r")
-    self.write(File.read())
-    File.close()
 
-Handlers     = [(r"/",SendFile)]
-App_Settings = {"debug":True}
-HTTP_Server  = tornado.web.Application(Handlers,**App_Settings)
+def make_app():
+    return tornado.web.Application([
+        (r"/", SendFile),
+    ])
 
-HTTP_Server.listen(9999)
-tornado.ioloop.IOLoop.instance().start()
+
+def main(argv):
+    global path
+
+    port = int(argv[0])
+    path = argv[1]
+
+    app = make_app()
+
+    app.listen(port)
+    tornado.ioloop.IOLoop.instance().start()
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
