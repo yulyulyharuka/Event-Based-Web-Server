@@ -1,7 +1,6 @@
-from __future__ import print_function
-
 import signal
 import pyuv
+
 
 def on_read(client, data, error):
     if data is None:
@@ -10,11 +9,15 @@ def on_read(client, data, error):
         return
     client.write(data)
 
+
 def on_connection(server, error):
     client = pyuv.TCP(server.loop)
     server.accept(client)
     clients.append(client)
-    client.start_read(on_read)
+    mystring = ""
+    data = mystring.encode('utf-8')
+    client.write(data)
+
 
 def signal_cb(handle, signum):
     [c.close() for c in clients]
@@ -25,6 +28,7 @@ def signal_cb(handle, signum):
 print("PyUV version %s" % pyuv.__version__)
 
 loop = pyuv.Loop.default_loop()
+
 clients = []
 
 server = pyuv.TCP(loop)
