@@ -78,7 +78,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">Result/result500B.csv</stringProp>
+          <stringProp name="filename">Result/Apache500B.csv</stringProp>
           <boolProp name="ResultCollector.success_only_logging">true</boolProp>
         </ResultCollector>
         <hashTree/>

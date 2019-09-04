@@ -15,9 +15,9 @@ Tool used:
    ```
    sh apache-jmeter-<version>/bin/jmeter.sh
    ```
-4. open test from resource folder (ConccurentTest.jmx)
+4. open test from resource folder (ConccurentTest.jmx) <br>
 ![](images/open.png)
-5. run the test
+5. run the test <br>
 ![](images/run.png)
 6. JMeter will create file result.csv
 
@@ -31,5 +31,9 @@ Tool used:
   * Memory Usage: 2.7 MB
 
 #### Apache
-* Average Latency:
-* Memory Usage:
+* 500 Byte file
+  * Average Latency: 2211 ms (4.700 Success Request/ 10.000 concurent request)
+  * Memory Usage: ~8 MB
+* 20 KB file
+  * Average Latency: 2200.5 ms (3.659 Success Request/ 10.000 concurent request)
+  * Memory Usage: ~8 MB
