@@ -13,17 +13,17 @@ def on_http_request(server, error):
     fd = pyuv.fs.open(server.loop, path, os.O_RDONLY, stat.S_IFREG)
 
     # read and close file
-    length = 1000
+    length = 30000
     offset = 0
     read_data = pyuv.fs.read(server.loop, fd, length, offset)
     close_status = pyuv.fs.close(server.loop, fd)
 
-    data = read_data.decode('utf-8')
+    data = read_data.decode('latin-')
 
     response = (
         "HTTP/1.1 200\n" +
         "status: 200\n" +
-        "Content-Type: text/plain\n"
+        "Content-Type: text/html\n"
         "Content-Length: {}\n".format(len(data)) +
         "\n"+
         data
