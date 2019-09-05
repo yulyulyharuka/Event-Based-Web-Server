@@ -54,3 +54,9 @@ Tool used:
     ```python3 src/main_tornado.py <port_number> <path_file>```
 
 ## Hasil Pengujian untuk Web Server dengan Low Level dan High Level Library
+* Low Level Library
+    * Average latency : 
+    * Memory Usage: 
+* High Level Library
+    * Average latency : 4.78233333333333 ms (10.000 Success Request/ 10.000 concurent request)
+    * Memory Usage: 10.3MB
