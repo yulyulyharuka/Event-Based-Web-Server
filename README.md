@@ -37,3 +37,20 @@ Tool used:
 * 20 KB file
   * Average Latency: 2200.5 ms (3.659 Success Request/ 10.000 concurent request)
   * Memory Usage: ~8 MB
+
+## Petunjuk Instalasi / Building dan Cara Menjalankan Program 
+- Program low level library dengan pyuv
+1. Install python3 pada perangkat anda 
+2. Lakukan instalasi library yang digunakan
+    ```pip3 install pyuv```
+3. Jalankan web server dengan membuka command prompt dan ketik perintah berikut :
+    ```python3 src/main_libuv.py <port_number> <path_file>```
+
+- Program high level library dengan tornado
+1. Install python3 pada perangkat anda 
+2. Lakukan instalasi library yang digunakan
+    ```pip3 install tornado```
+3. Jalankan web server dengan membuka command prompt dan ketik perintah berikut :
+    ```python3 src/main_tornado.py <port_number> <path_file>```
+
+## Hasil Pengujian untuk Web Server dengan Low Level dan High Level Library
