@@ -1,6 +1,12 @@
 # Event-Based-Web-Server
 Event based web server using low level library and high level library.
 
+## Daftar Anggota
+1. Shinta Ayu C. K. 13516029
+2. Yuly Haruka B. G. 13516031
+3. M. Sulthan Adhipradhana 13516035
+4. Raka Hadhyana 13516099
+
 ## Web-Server Benchmarking Tool
 Tool used:
 * [JMeter](https://jmeter.apache.org/)
@@ -55,8 +61,16 @@ Tool used:
 
 ## Hasil Pengujian untuk Web Server dengan Low Level dan High Level Library
 * Low Level Library
-    * Average latency : 
-    * Memory Usage: 
+    * 500 Byte file 
+        * Average latency : 0.3727 ms (10.000 Success Request/ 10.000 concurent request)
+        * Memory Usage: 3.9MB
+    * 20 KB file
+        * Average latency : 0.3803 ms (10.000 Success Request/ 10.000 concurent request)
+        * Memory Usage: 3.9MB
 * High Level Library
-    * Average latency : 4.78233333333333 ms (10.000 Success Request/ 10.000 concurent request)
-    * Memory Usage: 10.3MB
+    * 500 Byte file 
+        * Average latency : 16.74 ms (10.000 Success Request/ 10.000 concurent request)
+        * Memory Usage: 10.3MB
+    * 20 KB file
+        * Average latency : 6.1354 ms (10.000 Success Request/ 10.000 concurent request)
+        * Memory Usage: 11.2MB
